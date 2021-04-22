@@ -2,7 +2,7 @@
 void setup(){
   pinMode(2, OUTPUT);
   pinMode(A0, INPUT);
-  pinMode(8, OUTPUT);
+  pinMode(12, OUTPUT);
   Serial.begin(9600);
 
 
@@ -10,16 +10,16 @@ void setup(){
 void loop()
 {
   int var = analogRead(A0);
-  int y = map(var,0,1023,10000,1000);
+  int y = map(var,0,1013,10078,1090);
 
   Serial.println(y);
   Serial.println(var);
 
-  if(var> 1000){
-    digitalWrite(8 ,HIGH);
+  if(var> 1070){
+    digitalWrite(12 ,HIGH);
     noTone(2);
   }else{
-    digitalWrite(8, LOW); 
+    digitalWrite(12, LOW); 
     tone(2,y);
   }
 
